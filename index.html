@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter API</title>
+
+    <!-- Tailwind and Daisy Ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <head class="container mx-auto">
+        <!-- navbar -->
+        <div class="px-10 ">
+            <div class="navbar bg-base-100">
+                <div class="flex-1">
+                  <a class=" text-xl text-black ">Hot Gadget</a>
+                </div>
+                <div class="flex-none">
+                    <button class="btn btn-primary text-white font-semibold">Sign Up</button>
+                </div>
+              </div>
+        </div>
+
+
+        
+    </head>
+    <main>
+        <!-- Search Container -->
+        <section class="my-20">
+            <h1 class="text-center text-4xl font-extrabold">Search your phone</h1>
+        </section>
+
+        
+<!-- input field -->
+        <div class="text-center">
+            <div class="join">
+                <div>
+                  <div>
+                    <input id="input-field" class="input input-bordered join-item" placeholder="Search your phone"/>
+                  </div>
+                </div>
+                
+                <div class="indicator">
+                  <button onclick="handleSearch()" class="btn join-item btn-primary font-extrabold text-white">Search</button>
+                </div>
+              </div>
+        </div>
+       
+        <!-- loeading spinner -->
+
+        <div id="spinner" class="text-center my-20 hidden">
+            <span class="loading loading-spinner text-neutral"></span>
+        </div>
+
+<!-- -------------------Phone Container -->
+        <section class="container mx-auto">
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <!-- <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions">
+                        <button class="btn btn-primary">Show Details</button>
+                      </div>
+                    </div>
+                  </div> -->
+            </div>
+
+            <!-- Show All -->
+            <div id="show-all" class="text-center my-10 hidden">
+                <button onclick="handleShowAll()"  class="btn btn-primary font-extrabold text-white ">Show All</button>
+            </div>
+
+           
+
+        <!-- Modal -->
+        <div>
+            <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="showDetailsModal.showModal()">open modal</button> -->
+<dialog id="showDetailsModal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 id="phone-name" class="font-bold text-lg"></h3>
+    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+        </div>
+        </section>
+    </main>
+ <footer></footer>
+ <script src="scripts/script.js"></script>
+</body>
+</html>
